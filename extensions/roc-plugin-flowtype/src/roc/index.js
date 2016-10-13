@@ -14,25 +14,25 @@ export default {
         {
             hook: 'run-flow-command',
             description: 'Run flow command',
-            action: lazyRequire('../actions/flow')
+            action: lazyRequire('../actions/flow'),
         },
         {
             hook: 'babel-config',
             action: lazyRequire('../actions/babel'),
-        }
+        },
     ],
     commands: {
         development: {
             flow: {
                 command: flow,
                 description: 'Runs typechecking on current project',
-                settings: true
+                settings: true,
             },
         },
     },
     hooks: {
         'run-flow-command': {
-            description: 'Used to run the flow command'
-        }
-    }
+            description: 'Used to run the flow command',
+        },
+    },
 };
