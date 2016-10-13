@@ -21,6 +21,7 @@
     "url": ""
   },
   "dependencies": {
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
     "flow-bin": "^0.33.0",
     "roc": "^1.0.0-rc.11"
   },

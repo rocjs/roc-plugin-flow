@@ -10,11 +10,16 @@ export default {
     description: 'Plugin providing FlowType type checking.',
     config,
     meta,
-    actions: [{
-        hook: 'run-flow-command',
-        description: 'Run flow command',
-        action: lazyRequire('../actions/flow')
-    }
+    actions: [
+        {
+            hook: 'run-flow-command',
+            description: 'Run flow command',
+            action: lazyRequire('../actions/flow')
+        },
+        {
+            hook: 'babel-config',
+            action: lazyRequire('../actions/babel'),
+        }
     ],
     commands: {
         development: {
