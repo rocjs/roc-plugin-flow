@@ -10,10 +10,10 @@ import { default as flowconfig } from '../resources/flowconfig';
 const log = initLog();
 const HEAVY_EXCLAMATION_MARK_SYMBOL = '❗';
 
+const expectedOutput = stdout => /Found \d+ error[s]?/.test(stdout);
 const numErrors = (stdout) => /Found (\d+) error[s]?/.exec(stdout)[1];
 const removeErrorFooter = (stdout) => stdout.replace(/Found \d+ error[s]?/, '');
 const errorString = (num) => ((num > 1) ? 'errors' : 'error');
-
 const configFileExists = () => fs.existsSync(path.join(process.cwd(), '.flowconfig'));
 
 const createConfigFile = () => {
@@ -34,14 +34,16 @@ export default () => () => {
     log.small.info('Starting Flow type check. This may take a short while, please be patient.\n');
 
     return () => execFile(flow, ['check'], (err, stdout) => {
-        if (err) {
+        if (err && expectedOutput(stdout)) {
             const num = numErrors(stdout);
 
             log.small.raw('warn', 'red', HEAVY_EXCLAMATION_MARK_SYMBOL)(`Flow found ${num} ${errorString(num)}:\n`);
             log.small.raw('error')(removeErrorFooter(stdout));
-        }
-
-        if (stdout) {
+        } else if (err) {
+            log.small.raw('warn', 'red', HEAVY_EXCLAMATION_MARK_SYMBOL)(
+                'Flow terminated abnormally - you may have an error in your configuration.\n');
+            log.small.raw('error')(err);
+        } else {
             log.small.success(stdout);
         }
     });
