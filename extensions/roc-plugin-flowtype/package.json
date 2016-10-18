@@ -3,7 +3,7 @@
   "description": "A FlowType plugin for Roc - Type checking for JavaScript",
   "author": "Dan Etherington <dan@baseonmars.co.uk>",
   "license": "MIT",
-  "version": "0.0.2-pre",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",

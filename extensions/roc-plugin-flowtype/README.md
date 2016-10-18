@@ -1,6 +1,6 @@
 # roc-plugin-flow
 
-Plugin providing FlowType type checking.
+A FlowType plugin for Roc - Type checking for JavaScript
 
 ## Documentation
 - [Actions](docs/Actions.md)
