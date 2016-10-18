@@ -1,9 +1,9 @@
 {
   "name": "roc-plugin-flow",
   "description": "A FlowType plugin for Roc - Type checking for JavaScript",
-  "author": "Dan Etherington",
+  "author": "Dan Etherington <dan@baseonmars.co.uk>",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.1-pre",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
@@ -14,7 +14,9 @@
   ],
   "keywords": [
     "roc",
-    "roc-plugin"
+    "roc-plugin",
+    "flow",
+    "type check"
   ],
   "repository": "https://github.com/baseonmars/roc-plugin-flow/tree/master/extensions/roc-plugin-flow",
   "dependencies": {
