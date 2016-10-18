@@ -11,9 +11,13 @@ const log = initLog();
 const HEAVY_EXCLAMATION_MARK_SYMBOL = '❗';
 
 const expectedOutput = stdout => /Found \d+ error[s]?/.test(stdout);
+
 const numErrors = (stdout) => /Found (\d+) error[s]?/.exec(stdout)[1];
+
 const removeErrorFooter = (stdout) => stdout.replace(/Found \d+ error[s]?/, '');
+
 const errorString = (num) => ((num > 1) ? 'errors' : 'error');
+
 const configFileExists = () => fs.existsSync(path.join(process.cwd(), '.flowconfig'));
 
 const createConfigFile = () => {
