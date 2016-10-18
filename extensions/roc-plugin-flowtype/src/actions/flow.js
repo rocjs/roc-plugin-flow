@@ -2,26 +2,22 @@ import { execFile } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-import { flowconfig } from '../resources/flowconfig';
-
 import { initLog } from 'roc';
 import flow from 'flow-bin';
 
-const log = initLog();
+import { default as flowconfig } from '../resources/flowconfig';
 
+const log = initLog();
 const HEAVY_EXCLAMATION_MARK_SYMBOL = '❗';
 
 const numErrors = (stdout) => /Found (\d+) error[s]?/.exec(stdout)[1];
 const removeErrorFooter = (stdout) => stdout.replace(/Found \d+ error[s]?/, '');
 const errorString = (num) => ((num > 1) ? 'errors' : 'error');
 
-
-const configFileExists = () => {
-   return fs.existsSync(path.join(process.cwd(), '.flowconfig'));
-};
+const configFileExists = () => fs.existsSync(path.join(process.cwd(), '.flowconfig'));
 
 const createConfigFile = () => {
-    let target = path.join(process.cwd(), '.flowconfig');
+    const target = path.join(process.cwd(), '.flowconfig');
 
     fs.writeFileSync(target, flowconfig);
 };
