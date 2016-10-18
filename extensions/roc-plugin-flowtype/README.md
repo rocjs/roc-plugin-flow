@@ -6,8 +6,11 @@ Plugin providing FlowType type checking.
 
 `npm install roc-plugin-flowtype`
 
-You must create a .flowconfig file in the root directory of your project. The following is the recommended minimum to
-work correctly with [roc-package-web-app-react](https://www.npmjs.com/package/roc-package-web-app-react).
+## Getting started
+
+A `.flowconfig` file will be created in the root of your project if none exists. The following is the recommended minimum 
+to work correctly with [roc-package-web-app-react](https://www.npmjs.com/package/roc-package-web-app-react). If you have
+ an existing `.flowconfig` file and it doesn't include these lines then you'll likely want to add them.
 
 ```ini
 [ignore]
@@ -16,6 +19,10 @@ work correctly with [roc-package-web-app-react](https://www.npmjs.com/package/ro
 .*/node_modules/flux/.*
 .*/node_modules/yellowbox-react/.*
 ```
+
+Add `// @flow` to the top of each file that you want to check and run the checker with `roc flow`.
+
+You can find out more about FlowType and how to configure it on the [FlowType website](https://flowtype.org).
 
 ## Documentation
 - [Actions](docs/Actions.md)

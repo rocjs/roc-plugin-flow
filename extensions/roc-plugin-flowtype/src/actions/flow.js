@@ -1,4 +1,8 @@
 import { execFile } from 'child_process';
+import fs from 'fs';
+import path from 'path';
+
+import { flowconfig } from '../resources/flowconfig';
 
 import { initLog } from 'roc';
 import flow from 'flow-bin';
@@ -11,8 +15,27 @@ const numErrors = (stdout) => /Found (\d+) error[s]?/.exec(stdout)[1];
 const removeErrorFooter = (stdout) => stdout.replace(/Found \d+ error[s]?/, '');
 const errorString = (num) => ((num > 1) ? 'errors' : 'error');
 
+
+const configFileExists = () => {
+   return fs.existsSync(path.join(process.cwd(), '.flowconfig'));
+};
+
+const createConfigFile = () => {
+    let target = path.join(process.cwd(), '.flowconfig');
+
+    fs.writeFileSync(target, flowconfig);
+};
+
 export default () => () => {
-    log.small.info('Starting flow type check. This may take a short while, please be patient.\n');
+    if (!configFileExists()) {
+        log.small.warn('No .flowconfig file found - creating.');
+        log.small.info('You should commit .flowconfig to your source code repsository.');
+        createConfigFile();
+    } else {
+        log.small.info('Using .flowconfig file in root of project.');
+    }
+
+    log.small.info('Starting Flow type check. This may take a short while, please be patient.\n');
 
     return () => execFile(flow, ['check'], (err, stdout) => {
         if (err) {
