@@ -7,7 +7,6 @@ import flow from '../commands/flow';
 const lazyRequire = lazyFunctionRequire(require);
 
 export default {
-    description: 'Plugin providing FlowType type checking.',
     config,
     meta,
     actions: [
