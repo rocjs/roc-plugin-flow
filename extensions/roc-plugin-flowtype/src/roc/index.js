@@ -2,12 +2,10 @@ import { lazyFunctionRequire } from 'roc';
 
 import config from '../config/roc.config.js';
 import meta from '../config/roc.config.meta.js';
-import flow from '../commands/flow';
 
 const lazyRequire = lazyFunctionRequire(require);
 
 export default {
-    description: 'Plugin providing FlowType type checking.',
     config,
     meta,
     actions: [
@@ -24,7 +22,7 @@ export default {
     commands: {
         development: {
             flow: {
-                command: flow,
+                command: lazyRequire('../commands/flow'),
                 description: 'Runs typechecking on current project',
                 settings: true,
             },
