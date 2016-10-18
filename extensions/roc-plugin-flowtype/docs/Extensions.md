@@ -1,4 +1,4 @@
-# Extensions for `roc-plugin-flowtype`
+# Extensions for `roc-plugin-flow`
 
 The extensions that are used in the project, indirect and direct, in the order that they were added.
 

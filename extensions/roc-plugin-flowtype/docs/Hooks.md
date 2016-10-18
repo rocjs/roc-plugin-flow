@@ -1,9 +1,9 @@
-# Hooks for `roc-plugin-flowtype`
+# Hooks for `roc-plugin-flow`
 
 ## Hooks
 * [roc](#roc)
   * [update-settings](#update-settings)
-* [roc-plugin-flowtype](#roc-plugin-flowtype)
+* [roc-plugin-flow](#roc-plugin-flow)
   * [run-flow-command](#run-flow-command)
 
 ## roc
@@ -23,7 +23,7 @@ __Expected return value:__ `{}`
 | ----------- | ---------------------------------------------------------------------------- | ---------- | -------- | ------------ |
 | getSettings | A function that returns the settings after the context has been initialized. | `Function` | No       |              |
 
-## roc-plugin-flowtype
+## roc-plugin-flow
 
 ### run-flow-command
 

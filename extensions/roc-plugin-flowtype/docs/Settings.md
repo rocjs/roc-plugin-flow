@@ -1,3 +1,3 @@
-# Settings for `roc-plugin-flowtype`
+# Settings for `roc-plugin-flow`
 
 __No settings available.__

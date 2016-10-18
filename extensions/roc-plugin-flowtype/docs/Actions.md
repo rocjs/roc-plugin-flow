@@ -1,11 +1,11 @@
-# Actions for `roc-plugin-flowtype`
+# Actions for `roc-plugin-flow`
 
 ## Actions
-* [roc-plugin-flowtype](#roc-plugin-flowtype)
+* [roc-plugin-flow](#roc-plugin-flow)
   * [babel-config](#babel-config)
   * [run-flow-command](#run-flow-command)
 
-## roc-plugin-flowtype
+## roc-plugin-flow
 
 ### babel-config
 

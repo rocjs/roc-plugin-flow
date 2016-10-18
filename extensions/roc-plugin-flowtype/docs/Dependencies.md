@@ -1,4 +1,4 @@
-# Dependencies for `roc-plugin-flowtype`
+# Dependencies for `roc-plugin-flow`
 
 The dependencies that are available in the project.
 

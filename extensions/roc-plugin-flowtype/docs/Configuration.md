@@ -1,4 +1,4 @@
-# Config for `roc-plugin-flowtype`
+# Config for `roc-plugin-flow`
 
 Configuration that can be defined in `roc.config.js`, other than settings and project.
 

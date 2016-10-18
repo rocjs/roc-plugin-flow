@@ -1,5 +1,5 @@
 {
-  "name": "roc-plugin-flowtype",
+  "name": "roc-plugin-flow",
   "private": true,
   "license": "MIT",
   "scripts": {

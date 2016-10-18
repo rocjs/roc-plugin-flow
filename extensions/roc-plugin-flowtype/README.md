@@ -1,10 +1,10 @@
-# roc-plugin-flowtype
+# roc-plugin-flow
 
 Plugin providing FlowType type checking.
 
 ## Installation
 
-`npm install roc-plugin-flowtype`
+`npm install roc-plugin-flow`
 
 ## Getting started
 

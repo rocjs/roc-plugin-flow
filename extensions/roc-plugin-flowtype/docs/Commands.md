@@ -1,4 +1,4 @@
-# Commands for `roc-plugin-flowtype`
+# Commands for `roc-plugin-flow`
 
 ## General Information
 All commands can be called with some additional options illustrated in the table below.
@@ -37,7 +37,7 @@ roc development flow
 _All groups are available._
 
 ####  Defined by extensions
-roc-plugin-flowtype
+roc-plugin-flow
 
 ## meta
 __Meta commands__
